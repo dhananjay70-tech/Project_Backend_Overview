@@ -1,0 +1,46 @@
+Create a basic express application with typescript,
+Make sure to follow these rule.
+
+1. we will keep seperate modules.
+     The path would like this src/app/<module-name>
+2. Inside every module we will follow  this structure  :
+      <module-name>.routes.ts
+      <dto/<method>-<moduke-name>. routes.ts
+      <modules-name>.controller.ts
+      <modules-name>.services.ts
+      <modules-name>.schema.ts
+
+3. Inside the src foler we keep  all these folder
+        app
+        constants
+        middlewares
+        utils
+        config
+        types 
+        logger
+
+
+      and thse files:
+         app.ts
+         server.ts
+
+
+4. Use functional programing way for writting code.
+    you can use classes for specific usecases like
+    creating error class or logger class or...
+
+5. Use winston loggger for login. Use this logger utility everywhere to log entry/exit to 
+controller,services and dal . Also log exceptions and error 
+Never use console.log() directly.
+
+6. Create response classes called ApiSuccessResponse and ApiErrorResponse.
+  keep it in utils
+
+
+7. Create Error classes and thse errors will be thrown at requred places .
+  keep it in utils.
+
+8. The error  handling will be done in error handling middleware.
+  keep it in middlewares . 
+    
+
