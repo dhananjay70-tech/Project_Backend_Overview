@@ -40,7 +40,78 @@ Never use console.log() directly.
 7. Create Error classes and thse errors will be thrown at requred places .
   keep it in utils.
 
-8. The error  handling will be done in error handling middleware.
-  keep it in middlewares . 
-    
+8. The error  handling will be done in error handling middleware in express.
+ 
+9.Create a custom utility of asyncHandler to ease the error handling flow.
+
+10. Use zod for DTOs. Infer typesscript types from zod schemas.
+
+11. Use Drizzle ORM with drizzle kit  for migrations and drizzle neon pg for sql database.
+
+12. Env will be extracted in config/env.config.ts.
+
+13. Store the common typescript types in src/types.
+
+14. Create zod validation middleware to be used for validating zor schemas 
+   and error handling middleware in src /middlewares
+
+15. Don't keep seprate env per environment .
+   we will keep same  .env for staging ,testing ,development, production.
+   Also, don't add any environment specific customization anywhere in the code.
+
+
+16. Purpose of these files:
+    app.js:
+        - load env
+        - database connection
+        - create express app
+        - start server
+
+
+17. Setup Database to connect with Supabase(postgres sql)         
+
+18. API response convention:
+       Success:{
+        success: true,
+        statusCode: 200,
+        message: "success",
+        data: {},
+        metadata: {},
+        pagination: {}
+       }
+
+       Failure:
+        {
+            success: false,
+            statusCode: 400,
+            message: "error message",
+            errors?:{...},
+            data: {},
+        }
+
+ 19. Setup these middlewares:
+      cors
+      helmet
+      express.json()---body parser for json
+      cookieParser()
+      morgan for logging
+
+20. Have a health check API "/health"
+
+21. Put the products router at "/api/v1/products"
+
+22. Creats simple  CRUD REST APIs on products 
+       - create product
+       - get all products
+       - get product by id
+       - update product
+       - delete product
+
+23. This project does not have any testing  setup requirement. 
+
+
+
+
+    url..
+    https
 
