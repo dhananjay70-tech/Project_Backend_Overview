@@ -113,5 +113,9 @@ Never use console.log() directly.
 
 
     url..https://docs.google.com/spreadsheets/d/1_wXuyky6Ao9pulv48Mpj8n8-Cv7pBYk5ppE1gAFKRN8/edit?gid=362040213#gid=362040213
+<<<<<<< HEAD
   
+=======
+    https
+>>>>>>> ebd4618b17183aa592d44141b9e5726304c38f16
 
