@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -9,6 +9,7 @@ import { logger } from "./logger";
 import { errorHandler, notFoundHandler } from "./middlewares";
 import { ApiSuccessResponse } from "./utils";
 import { HTTP_STATUS } from "./constants";
+ 
 
 // Module routers
 import productsRouter from "./app/products/products.routes";
@@ -27,6 +28,9 @@ const createApp = (): Application => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
+  app.use((_req:Request, _res:Response, next:NextFunction) =>{
+    setTimeout(() => {next();},5000);
+  });
 
   // ─── HTTP request logger (morgan → winston) ───────────────────────────────
   app.use(
