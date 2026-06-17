@@ -46,6 +46,7 @@ export const createProduct = asyncHandler(
       ...body,
       price: String(body.price),
     });
+    
 
     logger.info("ProductsController.createProduct: exit", { id: product.id });
     new ApiSuccessResponse("Product created successfully", product).send(
